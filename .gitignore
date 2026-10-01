@@ -3,3 +3,6 @@ dist/
 src/content/generated.json
 playwright-report/
 test-results/
+
+# Temporary Google GitHub Actions credentials
+gha-creds-*.json
