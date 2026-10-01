@@ -56,7 +56,7 @@ The page can calculate the next confirmed scheduled session in a small browser f
 
 CI checks the content schema, duplicate IDs, status-specific fields, TypeScript, and the production build. Test the date/status logic and keyboard access where errors would affect navigation. Dependencies are recorded in package-lock.json; Node 24.19.0 is pinned in .nvmrc for local work and CI.
 
-For the project Pages URL, set Vite `base` to `/ai-club-season-26-27/`. This repository is public. The programme and session details are intended for public reading, but editorial approval still precedes publication. Internal meeting links, client details, private contact information, presenter identity, and unpublished material stay out of both source files and build output. Pages is a static host, not an authorization boundary.
+For the project Pages URL, set Vite `base` to `/`. This repository is public. The programme and session details are intended for public reading, but editorial approval still precedes publication. Internal meeting links, client details, private contact information, presenter identity, and unpublished material stay out of both source files and build output. Pages is a static host, not an authorization boundary.
 
 ## V2: SFEIR-account voting
 
