@@ -64,4 +64,4 @@ The required check is named `check` and covers: PR title lint, build+typecheck+c
 
 ## Routing
 
-No router dependency: `src/App.tsx` reads `?page=` and `?session=` query params directly, so `page`/`sessionId` state and `sessionHref()` (`src/Pages.tsx`) are the whole navigation model. Vite `base` is `/ai-club-season-26-27/` for GitHub Pages.
+No router dependency: `src/App.tsx` reads `?page=` and `?session=` query params directly, so `page`/`sessionId` state and `sessionHref()` (`src/Pages.tsx`) are the whole navigation model. Vite `base` is `/` for GitHub Pages.

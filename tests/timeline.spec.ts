@@ -139,7 +139,7 @@ test("hero lettering renders as vectors on Retina displays", async ({
     deviceScaleFactor: 2,
   });
   const page = await context.newPage();
-  await page.goto("http://127.0.0.1:4173/ai-club-season-26-27/");
+  await page.goto("http://127.0.0.1:4173/");
   const vector = page.locator(".hero-lettering");
   await expect(vector).toHaveAttribute("src", /\.svg$/);
   await vector.evaluate((img: HTMLImageElement) => img.decode());
