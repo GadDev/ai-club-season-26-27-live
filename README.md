@@ -1,4 +1,4 @@
-# AI Club · Season 2026–2027
+# AI Club · Season 2026–2027 
 
 [![CI](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/ci.yml/badge.svg)](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/ci.yml)
 [![Deploy](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/pages.yml/badge.svg)](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/pages.yml)
