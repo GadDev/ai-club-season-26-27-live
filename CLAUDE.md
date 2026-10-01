@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-The public programme site for the SFEIR Luxembourg AI Club (Oct 2026 – Jun 2027): a static React/Vite site built from validated YAML content, published to GitHub Pages. V1 is a read-only season timeline plus a topic catalog; voting and materials/replays are labelled design previews only (no backend, login, or database exist yet — see `docs/TECH_STACK.md` for the V2/V3 boundaries).
+The public programme site for the SFEIR Luxembourg AI Club (Oct 2026 – Jun 2027): a static React/Vite site built from validated YAML content and published to Firebase Hosting. V1 is a read-only season timeline plus a topic catalog; voting and materials/replays are labelled design previews only (no backend, login, or database exist yet — see `docs/TECH_STACK.md` for the V2/V3 boundaries).
 
 ## Commands
 
@@ -64,4 +64,6 @@ The required check is named `check` and covers: PR title lint, build+typecheck+c
 
 ## Routing
 
-No router dependency: `src/App.tsx` reads `?page=` and `?session=` query params directly, so `page`/`sessionId` state and `sessionHref()` (`src/Pages.tsx`) are the whole navigation model. Vite `base` is `/` for GitHub Pages.
+No router dependency: `src/App.tsx` reads `?page=` and `?session=` query params directly, so `page`/`sessionId` state and `sessionHref()` (`src/Pages.tsx`) are the whole navigation model. Vite `base` is `/` because Firebase Hosting serves the application from the domain root.
+
+`firebase.json` rewrites unmatched requests to `/index.html`, preserving SPA navigation and direct refreshes.
