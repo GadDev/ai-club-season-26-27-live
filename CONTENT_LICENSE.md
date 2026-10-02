@@ -17,7 +17,7 @@ You may share and adapt this material for any purpose, including commercially, p
 
 A suitable attribution is:
 
-> AI Club · Season 2026–2027 contributors — https://github.com/GadDev/ai-club-season-26-27 — CC BY 4.0
+> AI Club · Season 2026–2027 contributors — [https://github.com/GadDev/ai-club-season-26-27](https://github.com/GadDev/ai-club-season-26-27-live) — CC BY 4.0
 
 ## Software
 
