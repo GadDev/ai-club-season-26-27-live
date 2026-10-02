@@ -54,7 +54,7 @@ Start with the [content authoring guide](content/README.md) for the YAML model, 
 
 ### Requirements
 
-- Node.js 24.19.0 (`.nvmrc`)
+- Node.js 24.21.0 (`.nvmrc`)
 - npm
 
 ### Install and run
@@ -64,7 +64,7 @@ npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite under `/ai-club-season-26-27/`. After editing YAML content, restart the development command so generated content is refreshed.
+Open the local URL printed by Vite, normally `http://localhost:5173/`. After editing YAML content, restart the development command so generated content is refreshed.
 
 ## Quality checks
 
@@ -83,7 +83,9 @@ npx playwright install chromium
 npm run test:e2e
 ```
 
-CI runs the production build, content tests, production dependency audit, and Playwright checks on pushes and pull requests. See the [CI/CD quality-gate guide](docs/CI_CD.md) for Dependabot, labels, branch rules, and workflow details.
+Every pull request to `main` runs the production build, content and unit tests, dependency audit, and Playwright browser checks. After merge, the Firebase Hosting workflow rebuilds and validates `main` again immediately before production deployment.
+
+See the [CI/CD quality-gate guide](docs/CI_CD.md) for Dependabot, labels, branch rules, and workflow details.
 
 ## Technology
 
@@ -119,11 +121,9 @@ Programme content lives in validated YAML. The application is a static Vite buil
 
 ## Publishing
 
-The production site is published to [Firebase Hosting](https://ai-club-lux.web.app) by the **Deploy Firebase Hosting** GitHub Actions workflow after a successful production build, content tests, and browser checks on `main`.
+Production is deployed to [Firebase Hosting](https://ai-club-lux.web.app/) from `main` through GitHub Actions.
 
-GitHub Actions authenticates to Google Cloud through Workload Identity Federation and impersonates a dedicated Firebase Hosting deployer service account. No long-lived Google Cloud credentials or Firebase deployment tokens are stored in the repository.
-
-The deployment workflow can also be triggered manually from GitHub Actions.
+The deployment workflow rebuilds and validates the application before publishing. Authentication, permissions, Workload Identity Federation, and deployment architecture are documented in [CI/CD and quality gates](docs/CI_CD.md).
 
 ## License
 
