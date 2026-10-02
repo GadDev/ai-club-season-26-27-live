@@ -1,2 +1,8 @@
 # Default owner for repository changes.
 * @GadDev
+*                       @GadDev
+/.github/               @GadDev
+/.github/workflows/     @GadDev
+/docs/                  @GadDev
+/content/               @GadDev
+/src/                   @GadDev
