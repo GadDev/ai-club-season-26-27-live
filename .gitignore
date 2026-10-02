@@ -6,3 +6,17 @@ test-results/
 
 # Temporary Google GitHub Actions credentials
 gha-creds-*.json
+
+# Environment variables and local secrets
+.env
+.env.*
+!.env.example
+
+# Local Firebase state
+.firebase/
+
+# Private key material
+*.pem
+*.key
+*.p12
+*.pfx
