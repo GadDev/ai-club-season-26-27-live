@@ -40,3 +40,9 @@ Please do not submit:
 - secrets or credentials obtained from unrelated systems.
 
 If you discover an exposed credential, do not test it. Report it privately and allow the owner to rotate it.
+
+Variables prefixed with VITE_ are embedded into the browser bundle and
+must be treated as public configuration.
+
+Never store credentials, API secrets, service-account keys, signing keys,
+or private tokens in VITE_* variables.
