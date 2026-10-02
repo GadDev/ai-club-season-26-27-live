@@ -3,25 +3,40 @@ description: Suggest an improvement to the AI Club website or contributor workfl
 title: "[Feature]: "
 labels:
   - enhancement
+
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve AI Club · Season 2026–2027.
+
+        Please describe the problem and desired outcome rather than prescribing a specific technical implementation where possible.
+
   - type: textarea
     id: problem
     attributes:
       label: Problem or opportunity
       description: What user or contributor need are we trying to address?
+      placeholder: |
+        Describe the problem, friction, limitation, or opportunity you have observed.
     validations:
       required: true
+
   - type: textarea
     id: proposal
     attributes:
       label: Proposed outcome
       description: Describe the behaviour or experience you would like, without over-prescribing implementation.
+      placeholder: |
+        What should become possible or work differently?
     validations:
       required: true
+
   - type: dropdown
     id: audience
     attributes:
       label: Primary audience
+      description: Who benefits most from this change?
       options:
         - AI Club attendee
         - Presenter / facilitator
@@ -30,18 +45,37 @@ body:
         - Other
     validations:
       required: true
+
   - type: textarea
     id: value
     attributes:
       label: User value
       description: What becomes easier, clearer, faster, safer, or more useful if we solve this?
+      placeholder: |
+        Explain why this change matters to the intended audience.
     validations:
       required: true
+
+  - type: textarea
+    id: success
+    attributes:
+      label: What would success look like?
+      description: Optional. Describe how we would know this improvement is useful.
+      placeholder: |
+        For example: users can complete the task without guidance, navigation takes fewer steps, or programme information becomes easier to understand.
+
   - type: textarea
     id: alternatives
     attributes:
       label: Alternatives considered
-      description: Optional. What simpler options or workarounds have you considered?
+      description: Optional. What simpler options, workarounds, or alternative approaches have you considered?
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Optional. Add screenshots, references, examples, or related issues that help explain the proposal.
+
   - type: checkboxes
     id: checks
     attributes:
