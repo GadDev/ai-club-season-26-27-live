@@ -9,10 +9,17 @@ body:
       value: |
         Thanks for helping improve AI Club · Season 2026–2027. Please do not include security vulnerabilities here; follow SECURITY.md instead.
   - type: textarea
-    id: problem
+    id: actual
     attributes:
-      label: What happened?
-      description: Describe the problem and what you expected instead.
+      label: Actual behaviour
+      description: What happened?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      description: What did you expect to happen instead?
     validations:
       required: true
   - type: textarea
@@ -36,6 +43,8 @@ body:
     attributes:
       label: Browser / device / environment
       placeholder: Chrome 153, macOS; iPhone Safari; Node 24.19.0
+    validations:
+      required: true
   - type: textarea
     id: evidence
     attributes:
