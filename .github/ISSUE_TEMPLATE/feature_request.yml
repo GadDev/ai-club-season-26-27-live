@@ -31,6 +31,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: value
+    attributes:
+      label: User value
+      description: What becomes easier, clearer, faster, safer, or more useful if we solve this?
+    validations:
+      required: true
+  - type: textarea
     id: alternatives
     attributes:
       label: Alternatives considered
