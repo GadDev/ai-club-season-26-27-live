@@ -6,7 +6,7 @@
 
 The application should feel like a bold editorial signal for an engineering community: oversized compressed type, a precise season grid, strong colour-coded track bands, and a few sharp cut-paper gestures. The season remains the main event.
 
-The earlier [Season Index exploration](https://github.com/GadDev/ai-club-season-26-27/commits/main/ART_DIRECTION.md) tested conference programme, research index, transit map, and mission control. Additional visual explorations tested Swiss grid, dark observatory, library catalogue, and open workshop. The chosen Signal Index keeps the editorial discipline of the Season Index and adds a more distinctive public identity.
+The earlier [Season Index exploration](https://github.com/GadDev/ai-club-season-26-27-live/commits/main/ART_DIRECTION.md) tested conference programme, research index, transit map, and mission control. Additional visual explorations tested Swiss grid, dark observatory, library catalogue, and open workshop. The chosen Signal Index keeps the editorial discipline of the Season Index and adds a more distinctive public identity.
 
 ## Visual character
 

@@ -1,5 +1,5 @@
 blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability
-    url: https://github.com/GadDev/ai-club-season-26-27/security/policy
+    url: https://github.com/GadDev/ai-club-season-26-27-live/security/policy
     about: Do not disclose vulnerabilities in public issues. Follow the security policy.

@@ -12,7 +12,7 @@ Run `npm run content:validate` after edits, or restart `npm run dev`. This check
 - A pair has exactly one talk and one workshop with the same `pairId`, track, and target month while both are proposals. Keep their `editorialOrder` adjacent so they read as a pair in the timeline.
 - Presenter fields, private links, and unknown properties are rejected by the strict schema.
 
-All 30 pairs are visible as proposals; this is a programming backlog, not a promise to run 60 events. Prior-coverage notes remain in the editorial board. Changes merged into `main` are published by the GitHub Pages workflow after validation and browser checks.
+All 30 pairs are visible as proposals; this is a programming backlog, not a promise to run 60 events. Prior-coverage notes remain in the editorial board. Changes merged into `main` are published to Firebase Hosting by the deployment workflow after validation and browser checks.
 
 ## Season grid labels and symbols
 

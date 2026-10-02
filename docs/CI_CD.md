@@ -13,7 +13,7 @@ The gate succeeds only when all of these jobs succeed:
 - **Browser tests** — builds the site and runs the Playwright end-to-end suite in Chromium.
 - **Dependency audit** — runs `npm audit --omit=dev --audit-level=high` against production dependencies and blocks high/critical known vulnerabilities.
 
-CI is intentionally triggered for pull requests rather than every feature-branch push. A pull request update already triggers the same validation, avoiding duplicate runs. The Pages workflow performs the production build and tests again on `main` immediately before deployment.
+CI is intentionally triggered for pull requests rather than every feature-branch push. A pull request update already triggers the same validation, avoiding duplicate runs. The Firebase Hosting deployment workflow performs the production build and tests again on `main` immediately before deployment.
 
 GitHub Actions are pinned to immutable commit SHAs. Dependabot is responsible for proposing reviewed updates to those pins.
 
@@ -65,16 +65,29 @@ If the repository gains another regular maintainer, revisit the ruleset and cons
 
 ## Deployment
 
-`Publish programme` runs only for `main` (or manual dispatch). It:
+`Deploy Firebase Hosting` runs only for `main` or through manual dispatch. It:
 
 1. installs dependencies from `package-lock.json`;
 2. builds and validates the application;
 3. runs unit/content tests;
 4. runs Playwright browser tests;
-5. uploads `dist/` as the Pages artifact;
-6. deploys through GitHub Pages using OIDC.
+5. requests a short-lived GitHub OIDC token;
+6. authenticates to Google Cloud through Workload Identity Federation;
+7. impersonates the dedicated `ai-club-client-deployer` service account;
+8. deploys `dist/` to Firebase Hosting.
 
-The deployment job receives only the `pages: write` and `id-token: write` permissions it needs.
+The workflow receives only:
+
+- `contents: read` to check out the repository;
+- `id-token: write` to request the GitHub OIDC token.
+
+No long-lived Google Cloud service-account key or Firebase deployment token is stored in GitHub.
+
+The Workload Identity provider is restricted to the production repository and `main` branch. The deployer service account has only the permissions required for Firebase Hosting deployment.
+
+The production site is:
+
+`https://ai-club-lux.web.app`
 
 ## Failure policy
 

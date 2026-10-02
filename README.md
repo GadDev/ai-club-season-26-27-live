@@ -1,7 +1,8 @@
-# AI Club · Season 2026–2027 
+# AI Club · Season 2026–2027
 
-[![CI](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/ci.yml/badge.svg)](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/ci.yml)
-[![Deploy](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/pages.yml/badge.svg)](https://github.com/GadDev/ai-club-season-26-27/actions/workflows/pages.yml)
+[![CI](https://github.com/GadDev/ai-club-season-26-27-live/actions/workflows/ci.yml/badge.svg)](https://github.com/GadDev/ai-club-season-26-27-live/actions/workflows/ci.yml)
+
+[![Deploy Firebase Hosting](https://github.com/GadDev/ai-club-season-26-27-live/actions/workflows/firebase-hosting.yml/badge.svg)](https://github.com/GadDev/ai-club-season-26-27-live/actions/workflows/firebase-hosting.yml)
 ![Node.js 24](https://img.shields.io/badge/Node.js-24.x-339933?logo=node.js&logoColor=white)
 [![License: MIT](https://img.shields.io/badge/Code-MIT-blue.svg)](LICENSE)
 [![Content: CC BY 4.0](https://img.shields.io/badge/Content-CC%20BY%204.0-lightgrey.svg)](CONTENT_LICENSE.md)
@@ -10,9 +11,9 @@
 
 October 2026 → June 2027 · Talks · Workshops · Three learning tracks
 
-**[Explore the programme →](https://gaddev.github.io/ai-club-season-26-27/)** · [Browse the season board](docs/SEASON_BOARD.md) · [Contribute](CONTRIBUTING.md)
+**[Explore the programme →](https://ai-club-lux.web.app/?page=programmes)** · [Browse the season board](docs/SEASON_BOARD.md) · [Contribute](CONTRIBUTING.md)
 
-[![AI Club 2026–2027 season timeline](design/reviews/season-grid/desktop.png)](https://gaddev.github.io/ai-club-season-26-27/)
+[![AI Club 2026–2027 season timeline](design/reviews/season-grid/desktop.png)](https://ai-club-lux.web.app)
 
 ## About
 
@@ -24,22 +25,22 @@ The product evolves in three deliberately small stages: a public **timeline**, t
 
 ## Three learning tracks
 
-| Track | Level | Focus |
-| --- | --- | --- |
-| **Foundations** | Beginner | Build strong AI concepts, vocabulary, and practical confidence. |
-| **Engineering** | Practitioner | Apply AI techniques, tools, and workflows to real software engineering problems. |
-| **Deep Dive** | Advanced | Explore architecture, internals, evaluation, safety, and emerging engineering techniques. |
+| Track           | Level        | Focus                                                                                     |
+| --------------- | ------------ | ----------------------------------------------------------------------------------------- |
+| **Foundations** | Beginner     | Build strong AI concepts, vocabulary, and practical confidence.                           |
+| **Engineering** | Practitioner | Apply AI techniques, tools, and workflows to real software engineering problems.          |
+| **Deep Dive**   | Advanced     | Explore architecture, internals, evaluation, safety, and emerging engineering techniques. |
 
 ## Programme status
 
-| Capability | Status |
-| --- | --- |
-| Season timeline | ✅ V1 live |
-| Public session details | ✅ Available |
-| Candidate topics | ✅ 60 draft proposals / 30 pairs |
-| Confirmed scheduled events | ⏳ None yet |
-| Voting | 🧭 Planned — visual preview only |
-| Materials and replays | 🧭 Planned — visual preview only |
+| Capability                 | Status                           |
+| -------------------------- | -------------------------------- |
+| Season timeline            | ✅ V1 live                       |
+| Public session details     | ✅ Available                     |
+| Candidate topics           | ✅ 60 draft proposals / 30 pairs |
+| Confirmed scheduled events | ⏳ None yet                      |
+| Voting                     | 🧭 Planned — visual preview only |
+| Materials and replays      | 🧭 Planned — visual preview only |
 
 Until a session has a verified topic, date, Luxembourg-local time, and public location, it remains a proposal.
 
@@ -67,13 +68,13 @@ Open the local URL printed by Vite under `/ai-club-season-26-27/`. After editing
 
 ## Quality checks
 
-| Command | Purpose |
-| --- | --- |
-| `npm run content:validate` | Validate programme YAML and content rules |
-| `npm run typecheck` | Validate content and run TypeScript checks |
-| `npm run build` | Build the production site |
-| `npm test` | Run content/date/status tests with Vitest |
-| `npm run test:e2e` | Run Playwright browser, navigation, and accessibility checks |
+| Command                    | Purpose                                                      |
+| -------------------------- | ------------------------------------------------------------ |
+| `npm run content:validate` | Validate programme YAML and content rules                    |
+| `npm run typecheck`        | Validate content and run TypeScript checks                   |
+| `npm run build`            | Build the production site                                    |
+| `npm test`                 | Run content/date/status tests with Vitest                    |
+| `npm run test:e2e`         | Run Playwright browser, navigation, and accessibility checks |
 
 Install Chromium once before running the browser suite locally:
 
@@ -88,7 +89,7 @@ CI runs the production build, content tests, production dependency audit, and Pl
 
 **React · TypeScript · Vite · Tailwind CSS · Zod · Vitest · Playwright**
 
-Programme content lives in validated YAML. The application is a static Vite build published through GitHub Pages; architecture and future system boundaries are documented in the [technical stack](docs/TECH_STACK.md).
+Programme content lives in validated YAML. The application is a static Vite build published through Firebase Hosting. Production deployments run from GitHub Actions and authenticate to Google Cloud through Workload Identity Federation, without long-lived service-account keys. Architecture and future system boundaries are documented in the [technical stack](docs/TECH_STACK.md).
 
 ## Documentation
 
@@ -118,7 +119,11 @@ Programme content lives in validated YAML. The application is a static Vite buil
 
 ## Publishing
 
-GitHub Pages is published by the **Publish programme** workflow after a successful production build, content tests, and browser checks on `main`. The workflow can also be triggered manually.
+The production site is published to [Firebase Hosting](https://ai-club-lux.web.app) by the **Deploy Firebase Hosting** GitHub Actions workflow after a successful production build, content tests, and browser checks on `main`.
+
+GitHub Actions authenticates to Google Cloud through Workload Identity Federation and impersonates a dedicated Firebase Hosting deployer service account. No long-lived Google Cloud credentials or Firebase deployment tokens are stored in the repository.
+
+The deployment workflow can also be triggered manually from GitHub Actions.
 
 ## License
 
