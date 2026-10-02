@@ -44,24 +44,20 @@ Dependabot pull requests go through the same CI and branch rules as human-author
 
 ## Default-branch rules
 
-The active `Default` repository ruleset protects the default branch. It currently:
+The active `Protect main` repository ruleset protects the default branch.
+
+It:
 
 - blocks branch deletion;
-- blocks non-fast-forward updates / force pushes;
+- blocks non-fast-forward updates and force pushes;
 - requires changes through a pull request;
 - requires review conversations to be resolved;
+- allows squash merging only;
 - requires `GitGuardian Security Checks`;
-- requires the `check` CI status.
+- requires the `check` CI status;
+- requires pull request branches to be up to date with `main` before merging.
 
-For a single-maintainer repository, the approval count should remain **0**. Requiring one approval or a code-owner approval would prevent the pull-request author from merging their own work.
-
-After this CI configuration is merged and has completed successfully, enable **Require branches to be up to date before merging** for the `Default` ruleset. This prevents a pull request from merging against stale `main`.
-
-If the repository gains another regular maintainer, revisit the ruleset and consider:
-
-1. requiring one approval;
-2. dismissing stale approvals after new commits;
-3. requiring code-owner review for sensitive paths such as `.github/workflows/**`.
+For a single-maintainer repository, the approval count remains **0**. If another regular maintainer joins, revisit required approvals and code-owner review.
 
 ## Deployment
 
