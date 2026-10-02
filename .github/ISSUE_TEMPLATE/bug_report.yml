@@ -3,25 +3,35 @@ description: Report a reproducible problem with the website or repository toolin
 title: "[Bug]: "
 labels:
   - bug
+
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for helping improve AI Club · Season 2026–2027. Please do not include security vulnerabilities here; follow SECURITY.md instead.
+        Thanks for helping improve AI Club · Season 2026–2027.
+
+        Please do not include security vulnerabilities, secrets, credentials, or personal data in this issue. Follow `SECURITY.md` for security reports instead.
+
   - type: textarea
     id: actual
     attributes:
       label: Actual behaviour
       description: What happened?
+      placeholder: |
+        Describe what you observed, including any visible error or unexpected behaviour.
     validations:
       required: true
+
   - type: textarea
     id: expected
     attributes:
       label: Expected behaviour
       description: What did you expect to happen instead?
+      placeholder: |
+        Describe the behaviour you expected.
     validations:
       required: true
+
   - type: textarea
     id: reproduce
     attributes:
@@ -30,26 +40,33 @@ body:
       placeholder: |
         1. Go to …
         2. Click …
-        3. Observe …
+        3. Enter …
+        4. Observe …
     validations:
       required: true
+
   - type: input
     id: location
     attributes:
-      label: Page or route
-      placeholder: https://ai-club-lux.web.app/…
+      label: Page, route, or affected area
+      description: Where does the problem occur?
+      placeholder: https://ai-club-lux.web.app/… or src/components/…
+
   - type: input
     id: environment
     attributes:
       label: Browser / device / environment
-      placeholder: Chrome 153, macOS; iPhone Safari; Node 24.19.0
+      description: Include the browser and device for UI issues, or the runtime for tooling issues.
+      placeholder: Chrome 153 on macOS; Safari on iPhone; Node 24.21.0
     validations:
       required: true
+
   - type: textarea
     id: evidence
     attributes:
-      label: Screenshots or additional context
-      description: Add screenshots, logs, or other useful context. Remove secrets and personal data first.
+      label: Screenshots, logs, or additional context
+      description: Add screenshots, console errors, logs, or other useful evidence. Remove secrets and personal data first.
+
   - type: checkboxes
     id: checks
     attributes:
