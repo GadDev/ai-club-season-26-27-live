@@ -41,8 +41,10 @@ Please do not submit:
 
 If you discover an exposed credential, do not test it. Report it privately and allow the owner to rotate it.
 
-Variables prefixed with VITE_ are embedded into the browser bundle and
-must be treated as public configuration.
+## Client-side configuration
 
-Never store credentials, API secrets, service-account keys, signing keys,
-or private tokens in VITE_* variables.
+Environment variables prefixed with `VITE_` are embedded into the browser bundle and must be treated as public configuration.
+
+Do not store credentials, API secrets, private tokens, service-account keys, signing keys, or other confidential values in `VITE_*` variables.
+
+Use `.env.example` only to document expected variable names. Local `.env*` files must not contain values intended for source control.
