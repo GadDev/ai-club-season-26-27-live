@@ -45,6 +45,8 @@ jobs:
           cache: npm
       - name: Install dependencies
         run: npm ci
+      - name: Firebase CLI smoke test
+        run: npx --no-install firebase --version
       - name: Build
         run: npm run build
       - name: Unit and content tests
